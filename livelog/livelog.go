@@ -145,6 +145,7 @@ func (b *Writer) stop() bool {
 	var closed bool
 	if b.closed == false {
 		close(b.close)
+		b.closed = true
 		closed = true
 	}
 	b.Unlock()
